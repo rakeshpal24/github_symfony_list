@@ -17,9 +17,6 @@ class GitHubController extends Controller
         
         $client = new Client();
 
-        //$repos = $client->api('repo')->all();
-
-
         $repos = $client->api('repo')->find('symfony');
 
         $repositories = $repos['repositories'];
@@ -37,8 +34,6 @@ class GitHubController extends Controller
         return $this->render('github/index.html.twig', [
                 'repos' => $symfony_repos,
             ]);
-
-        //echo "<pre>"; print_r($symfony_repos); die('end');
 
     }
 }
